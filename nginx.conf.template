@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Runtime config: API_URL is substituted from the container env on startup.
+    location = /config.js {
+        default_type application/javascript;
+        add_header Cache-Control "no-store";
+        return 200 'window.__APP_CONFIG__ = { API_URL: "${API_URL}" };';
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

@@ -1,0 +1,303 @@
+:root {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-text: #1f2328;
+  --color-muted: #6b7280;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #059669;
+  --color-danger: #dc2626;
+  --color-border: #e5e7eb;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-header h2 {
+  margin: 0;
+}
+
+.back-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.page-home {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.page-home h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 24px;
+}
+
+.big-button {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.big-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.big-button-primary {
+  background: var(--color-primary);
+  color: white;
+}
+.big-button-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.big-button-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+.big-button-secondary:disabled {
+  background: #9ca3af;
+}
+
+.big-button-danger {
+  background: var(--color-danger);
+  color: white;
+}
+
+.notice {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.notice-error {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.radius-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.radius-control input[type="range"] {
+  width: 100%;
+}
+
+.map-container {
+  width: 100%;
+  height: min(60vh, 520px);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 12px;
+  margin-right: 4px;
+}
+.legend-dot:first-child {
+  margin-left: 0;
+}
+.legend-dot-user {
+  background: var(--color-secondary);
+}
+.legend-dot-prayer {
+  background: var(--color-primary);
+}
+
+.marker {
+  width: 22px;
+  height: 22px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.marker-user {
+  background: var(--color-secondary);
+  cursor: default;
+}
+.marker-prayer {
+  background: var(--color-primary);
+}
+
+.create-panel,
+.active-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.counters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.counter {
+  flex: 1;
+  min-width: 140px;
+  background: var(--color-bg);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.counter-label {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-controls button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.counter-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  min-width: 2ch;
+  text-align: center;
+}
+
+.details-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+textarea,
+select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.prayer-type-label {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.popup {
+  font-size: 0.9rem;
+  max-width: 220px;
+}
+.popup p {
+  margin: 4px 0;
+}
+.popup-distance {
+  color: var(--color-muted);
+}
+.popup-cta {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 12px;
+  }
+  .counters {
+    flex-direction: column;
+  }
+}
