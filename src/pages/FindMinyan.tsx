@@ -9,7 +9,7 @@ import { getParticipantToken } from "../lib/storage";
 import { useGeolocation } from "../lib/useGeolocation";
 import type { Prayer } from "../types";
 
-const MIN_RADIUS_KM = 1;
+const MIN_RADIUS_KM = 0;
 const MAX_RADIUS_KM = 30;
 const DEFAULT_RADIUS_KM = 5;
 

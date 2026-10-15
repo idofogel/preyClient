@@ -120,7 +120,7 @@ export function CreateMinyan() {
         <Link to="/" className="back-link">
           &larr; חזרה
         </Link>
-        <h2>Start a minyan</h2>
+        <h2>התחל מניין</h2>
       </header>
 
       {error && <p className="notice notice-error">{error}</p>}
